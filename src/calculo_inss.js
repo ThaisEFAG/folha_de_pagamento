@@ -1,7 +1,7 @@
 const readline = require("readline");
 const input = readline.createInterface(process.stdin, process.stdout);
 
-let inputSalario = "";
+let inputSalario = 0;
 
 input.question("Qual o valor do seu salario?", (salarioDigitado) => {
   input.close();
