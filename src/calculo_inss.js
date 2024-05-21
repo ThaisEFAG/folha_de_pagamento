@@ -1,4 +1,3 @@
-
 let inputSalario = 0;
 
 function calculoINSS(salarioDigitado) {
@@ -13,7 +12,7 @@ function calculoINSS(salarioDigitado) {
   }
   if (inputSalario >= 1412.01 && inputSalario <= 2666.68) {
     const porcentagemInss2 = inputSalario * (9 / 100);
-     return porcentagemInss2;
+    return porcentagemInss2;
   }
   if (inputSalario >= 2666.69 && inputSalario <= 4000.03) {
     const porcentagemInss3 = inputSalario * (12 / 100);
@@ -25,6 +24,6 @@ function calculoINSS(salarioDigitado) {
   } else {
     console.log("Taxas exorbitantes");
   }
-};
+}
 
 module.exports = calculoINSS;

@@ -1,12 +1,11 @@
-
 let inputIR = 0;
 
- function calculoIR(irDigitado) {
+function calculoIR(irDigitado) {
   inputIR = parseFloat(irDigitado);
-//   if (inputIR <= 2112.00) {
-//     console.log("IR isento");
-//     return;
-//   }
+  //   if (inputIR <= 2112.00) {
+  //     console.log("IR isento");
+  //     return;
+  //   }
   if (inputIR >= 2112.01 && inputIR <= 2826.65) {
     const porcentagemIR1 = inputIR * (7.5 / 100);
     return porcentagemIR1;
@@ -22,9 +21,9 @@ let inputIR = 0;
   if (inputIR >= 4664.68) {
     const porcentagemIR4 = inputIR * (27.5 / 100);
     return porcentagemIR4;
-  } else{
-    return "IR isento"
+  } else {
+    return "IR isento";
   }
-};
+}
 
 module.exports = calculoIR;
