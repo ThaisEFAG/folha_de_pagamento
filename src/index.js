@@ -4,7 +4,26 @@ const input = readline.createInterface({
   output: process.stdout
 });
 const calculoSalario = require("./calculo_salario_liquido")
+// file system= lidar com os arquivos
+const fs = require ('fs');
+// PDFDocument = geração do PDF
+const PDFDocument = require ('pdfkit');
 
+const doc = new PDFDocument({ size: 'a4' });
+// destino dos dados após a geração do PDF
+doc.pipe(fs.createWriteStream('holerite.pdf'));
+// configurações do PDF
+doc.fontSize(12);
+
+doc.fontSize(20).text('Folha de pagamento', 200, 100);
+
+doc.text(`Nome: ${arraysin.nome}`);
+doc.text(`Mês: ${arraysin.mes}`);
+doc.text(`Salário Bruto: R$${arraysin.salarioDigit1}`);
+doc.text(`INSS: R$ ${valoresCalculos.INSS}`);
+doc.text(`Imposto de Renda: R$ ${valoresCalculos.ir}`);
+doc.text(`Salário líquido: R$ ${valoresCalculos.Salario_liquido}`);
+doc.end();
 // let -> sofre alteração durante a execução do programa
 // const -> valor fixo durante a execução do programa
 
@@ -81,7 +100,7 @@ input.question("Qual o seu nome?", (nomeDigitado) => {
           };
             let valoresCalculos = calculoSalario(salarioDigit1)
             // console.log(arraysin, valoresCalculos)
-            console.log(`------- Folha de pagamento -----\nNome: ${arraysin.nome}\nCPF: ${arraysin.cpf}\nMês: ${arraysin.mes}\nSalário Bruto: R$${arraysin.salarioDigit1}\n\n______Descontos______\nINSS: R$ ${valoresCalculos.inss}\nImposto de Renda: R$ ${valoresCalculos.ir}\n\nSalário líquido: R$ ${valoresCalculos.saliquido}`)
+            console.log(`\n------- Folha de pagamento -----\nNome: ${arraysin.nome}\nCPF: ${arraysin.cpf}\nMês: ${arraysin.mes}\nSalário Bruto: R$${arraysin.salarioDigit1}\n\n______Descontos______\nINSS: R$ ${valoresCalculos.INSS}\nImposto de Renda: R$ ${valoresCalculos.ir}\n\nSalário líquido: R$ ${valoresCalculos.Salario_liquido}`)
         })
       }
 
