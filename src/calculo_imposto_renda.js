@@ -1,4 +1,5 @@
 let inputIR = 0;
+let irNaN = "Isento"
 
 function calculoIR(irDigitado) {
   inputIR = parseFloat(irDigitado);
@@ -22,7 +23,7 @@ function calculoIR(irDigitado) {
     const porcentagemIR4 = inputIR * (27.5 / 100);
     return porcentagemIR4;
   } else {
-    return "IR isento";
+    return irNaN;
   }
 }
 

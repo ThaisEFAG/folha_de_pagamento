@@ -51,7 +51,7 @@ input.question("Qual o seu nome?", (nomeDigitado) => {
 
 function digitarCPF() {
   input.question("Qual o seu CPF:", (cpfDigitado) => {
-    if ((cpf = (cpfDigitado))) {
+    if ((cpf = Number((cpfDigitado)))) {
       arraysin.cpf = cpf;
       digitarMes();
     } else {
@@ -101,7 +101,7 @@ function salarioInput() {
     doc.text(`CPF: ${arraysin.cpf}`);
     doc.text(`Mês: ${arraysin.mes}`);
     doc.text(`Salário Bruto: R$${arraysin.salarioDigit1}`);
-    doc.text(`INSS: R$ ${valoresCalculos.INSS}`, 100, 40);
+    doc.text(`INSS: R$ ${valoresCalculos.INSS}`);
     doc.text(`Imposto de Renda: R$ ${valoresCalculos.ir}`);
     doc.text(`Salário líquido: R$ ${valoresCalculos.Salario_liquido}`);
     doc.end();
