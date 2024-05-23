@@ -6,13 +6,15 @@ function calculoSalario(valorparacalcular) {
   let inss = calculoINSS(valorparacalcular);
 
   // if(ir =! irNaN){
-  let saliquido = valorparacalcular - ir - inss;
-  return {
-    ir: ir,
-    INSS: inss,
-    Salario_liquido: saliquido,
-    // }
-  };
+  if (ir >= 152.4) {
+    let saliquido = valorparacalcular - ir - inss;
+    return {
+      ir: ir,
+      INSS: inss,
+      Salario_liquido: saliquido,
+      // }
+    };
+  }
 }
 
 module.exports = calculoSalario;
